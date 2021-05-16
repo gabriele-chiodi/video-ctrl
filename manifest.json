@@ -1,0 +1,68 @@
+{
+    "manifest_version": 3,
+    "name": "video-ctrl",
+    "version": "1.0",
+    "action": {
+        "default_icon": {
+            "16": "images/icon16.png",
+            "24": "images/icon24.png",
+            "32": "images/icon32.png"
+        },
+        "default_title": "video-ctrl"
+    },
+    "description": "Global shortcurts to navigate between Youtube tabs and Play, Pause, Forward, Backward video.",
+    "icons": {
+        "16": "images/icon16.png",
+        "48": "images/icon48.png",
+        "128": "images/icon128.png"
+    },
+    "author": "Gabriele Chiodi",
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [{
+      "matches": [
+          "https://www.youtube.com/watch?*"
+      ],
+      "run_at": "document_idle",
+      "all_frames": true,
+      "js": ["content.js"]
+    }],
+    "permissions": [
+      "scripting",
+      "tabs"
+    ],
+    "host_permissions": [
+      "https://www.youtube.com/watch?*"
+    ],
+    "commands": {
+        "switch-video-tab": {
+          "suggested_key": {
+            "default": "Ctrl+Shift+1"
+          },
+          "description": "switch-video-tab",
+          "global": true
+        },
+        "play-pause-video": {
+          "suggested_key": {
+            "default": "Ctrl+Shift+2"
+          },
+          "description": "play-pause-video",
+          "global": true
+        },
+        "forward-video": {
+          "suggested_key": {
+            "default": "Ctrl+Shift+3"
+          },
+          "description": "forward-video",
+          "global": true
+        },
+        "backward-video": {
+          "suggested_key": {
+            "default": "Ctrl+Shift+4"
+          },
+          "description": "backward-video",
+          "global": true
+        }
+    }
+}
