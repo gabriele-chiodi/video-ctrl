@@ -3,6 +3,7 @@
   "name": "video-ctrl",
   "version": "1.0.1",
   "action": {
+    "default_popup": "options.html",
     "default_icon": {
       "16": "images/icon16.png",
       "24": "images/icon24.png",
@@ -17,6 +18,10 @@
     "128": "images/icon128.png"
   },
   "author": "Gabriele Chiodi",
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
   "background": {
     "service_worker": "background.js"
   },
@@ -33,7 +38,7 @@
       "js": ["content.js"]
     }
   ],
-  "permissions": ["scripting", "tabs"],
+  "permissions": ["scripting", "tabs", "storage"],
   "host_permissions": [
     "https://*.youtube.com/*",
     "https://vimeo.com/*",
@@ -52,30 +57,34 @@
   "commands": {
     "switch-video-tab": {
       "suggested_key": {
-        "default": "Ctrl+Shift+1"
+        "default": "Ctrl+Shift+1",
+        "mac": "Command+Shift+1"
       },
-      "description": "switch-video-tab",
+      "description": "Switch video tab",
       "global": true
     },
     "play-pause-video": {
       "suggested_key": {
-        "default": "Ctrl+Shift+2"
+        "default": "Ctrl+Shift+2",
+        "mac": "Command+Shift+2"
       },
-      "description": "play-pause-video",
+      "description": "Play or Pause the video",
       "global": true
     },
     "forward-video": {
       "suggested_key": {
-        "default": "Ctrl+Shift+3"
+        "default": "Ctrl+Shift+3",
+        "mac": "Command+Shift+3"
       },
-      "description": "forward-video",
+      "description": "Forward the video of 5 seconds",
       "global": true
     },
     "backward-video": {
       "suggested_key": {
-        "default": "Ctrl+Shift+4"
+        "default": "Ctrl+Shift+4",
+        "mac": "Command+Shift+4"
       },
-      "description": "backward-video",
+      "description": "Backward the video of 5 seconds",
       "global": true
     }
   }
