@@ -19,3 +19,8 @@ save your time!
 
 ## Install
 [chrome web store](https://chrome.google.com/webstore/detail/video-ctrl/alfceocpdhihhlpagidmcehfnlidakca)
+
+## Supported browsers
+* Chrome
+
+At the moment Firefox is not supported due to the fact that it's not possible to set global shortcuts.
